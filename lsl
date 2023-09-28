@@ -1,3 +1,6 @@
+
+
+
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -26,7 +29,6 @@ foreach my $object (@listing) {
     }
 }
 
-print "------------------------\n";
 print GREEN "Directories and Symlinks\n", RESET;
 foreach (@directories) {
         print BLUE $_, " ", RESET;
@@ -46,4 +48,4 @@ foreach (@leftovers) {
   print WHITE $_, " ", RESET;
   }
 }
-print "\n------------------------\n", RESET;
+print "\n", RESET;
