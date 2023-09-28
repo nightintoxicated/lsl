@@ -26,4 +26,4 @@ with regular ls
 
 with lsl
 
-![Screenshot 2023-09-28 at 10 32 00](https://github.com/nightintoxicated/lsl/assets/50459012/30721af6-f269-45ea-9b10-80a012010d23)
+![Screenshot 2023-09-28 at 15 52 26](https://github.com/nightintoxicated/lsl/assets/50459012/b76ae4bf-9760-4f64-b330-7180cbfd7103)
