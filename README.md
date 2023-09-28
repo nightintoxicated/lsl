@@ -1,13 +1,13 @@
 # lsl
 
 lsl is a wrapper around ls to make the output a little bit more organised and easier to digest.
-to install:<br>
+to install:
 Option 1:
 make sure you have make installed
-cd /tmp
-git clone
-cd into directory
-type make install
+cd /tmp;
+git clone;
+cd into directory;
+type make install;
 
 Option 2:
 download the file, chmod +x lsl, then move it to /bin or another $PATH
