@@ -6,6 +6,7 @@ use Term::ANSIColor qw(:constants);
 my @listing = qx(ls -F);
 foreach(@listing) {
   chomp $_;
+  #print $_, "\n";
 }
 
 my @directories;
@@ -16,7 +17,7 @@ foreach my $object (@listing) {
   #if directory
   if($object =~ m/\/$/){
   push(@directories, $object)
-  } 
+  }
   #if symlink
   elsif($object =~ m/\@$/){
   push(@symlinks, $object)
@@ -25,20 +26,24 @@ foreach my $object (@listing) {
     }
 }
 
-
-
-print GREEN "Directories and Symlinks\n";
+print "------------------------\n";
+print GREEN "Directories and Symlinks\n", RESET;
 foreach (@directories) {
-  print BRIGHT_BLUE $_, " ";
+        print BLUE $_, " ", RESET;
 }
 print "\n";
 foreach (@symlinks) {
-  print CYAN $_, " ";
+  print CYAN $_, " ", RESET;
 }
 
-print "\n\n";
-print GREEN "Files\n";
+print "\n------------------------\n";
+print GREEN "Files\n", RESET;
+
 foreach (@leftovers) {
-  print WHITE $_, " ";
+  if($_ =~ m/\*$/) {
+  print GREEN $_, " ", RESET;
+  } else {
+  print WHITE $_, " ", RESET;
+  }
 }
-print "\n", RESET;
+print "\n------------------------\n", RESET;
