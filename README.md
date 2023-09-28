@@ -1,7 +1,7 @@
 # lsl
 
 lsl is a wrapper around ls to make the output a little bit more organised and easier to digest.
-to install:
+to install:<br>
 Option 1:
 make sure you have make installed
 cd /tmp
