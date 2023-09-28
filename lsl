@@ -1,6 +1,3 @@
-
-
-
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -9,7 +6,6 @@ use Term::ANSIColor qw(:constants);
 my @listing = qx(ls -F);
 foreach(@listing) {
   chomp $_;
-  #print $_, "\n";
 }
 
 my @directories;
@@ -20,7 +16,7 @@ foreach my $object (@listing) {
   #if directory
   if($object =~ m/\/$/){
   push(@directories, $object)
-  }
+  } 
   #if symlink
   elsif($object =~ m/\@$/){
   push(@symlinks, $object)
@@ -29,23 +25,91 @@ foreach my $object (@listing) {
     }
 }
 
-print GREEN "Directories and Symlinks\n", RESET;
+my $length = 0;
+my $longest = 0;
 foreach (@directories) {
-        print BLUE $_, " ", RESET;
+  if (defined $length) {
+    $length = length($_);
+    if($length > $longest) {
+      $longest = $length;
+}}}
+
+# Time to print stuff 
+my $counter = 0;
+print GREEN "Directories and Symlinks\n", RESET;
+
+foreach my $dir_item (@directories) {
+  if($counter eq 4) {
+    #for columns
+    print "\n";
+    $counter = 0;
+  }
+  print BLUE $dir_item, "  ", RESET;
+
+  my $a = length($dir_item);
+  my $spaces = $longest - $a;
+  my $i = 0;
+  #print "i need $spaces spaces";
+  while ($i < $spaces) {
+    print " ";
+
+    $i +=1;
+  }
+$counter += 1;
 }
+
+#print symlinks
 print "\n";
-foreach (@symlinks) {
-  print CYAN $_, " ", RESET;
+$counter = 0;
+foreach my $sym_item (@symlinks) {
+  if($counter eq 4) {
+    print "\n";
+    $counter = 0;
+  }
+  print CYAN $sym_item, "  ", RESET;
+
+  my $a = length($sym_item);
+  my $spaces = $longest - $a;
+  my $i = 0;
+  while ($i < $spaces) {
+    print " ";
+    $i +=1;
+  }
+$counter += 1;
 }
+
 
 print "\n------------------------\n";
-print GREEN "Files\n", RESET;
+print GREEN "Files\n\n", RESET;
 
-foreach (@leftovers) {
-  if($_ =~ m/\*$/) {
-  print GREEN $_, " ", RESET;
-  } else {
-  print WHITE $_, " ", RESET;
+
+$counter = 0;
+foreach my $file_item (@leftovers) {
+  if($counter eq 4) {
+    print "\n";
+    $counter = 0;
   }
+  if($file_item =~ m/\*$/) {
+  #green for files with a * (executables) 
+  print GREEN $file_item, "  ", RESET;
+  } else {
+  print WHITE $file_item, "  ", RESET;
+  }
+
+  my $a = length($file_item);
+  my $spaces = $longest - $a;
+  my $i = 0;
+  while ($i < $spaces) {
+	  print " ";
+  $i +=1;
+ }
+$counter += 1;
 }
+
+
+
+
+
+
+
 print "\n", RESET;
