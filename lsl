@@ -49,7 +49,6 @@ foreach my $dir_item (@directories) {
   my $a = length($dir_item);
   my $spaces = $longest - $a;
   my $i = 0;
-  #print "i need $spaces spaces";
   while ($i < $spaces) {
     print " ";
 
@@ -84,6 +83,16 @@ print GREEN "Files\n\n", RESET;
 
 
 $counter = 0;
+$longest = 0;
+
+foreach (@leftovers) {
+  if (defined $length) {
+    $length = length($_);
+    if($length > $longest) {
+      $longest = $length;
+}}}
+
+
 foreach my $file_item (@leftovers) {
   if($counter eq 4) {
     print "\n";
@@ -105,11 +114,4 @@ foreach my $file_item (@leftovers) {
  }
 $counter += 1;
 }
-
-
-
-
-
-
-
 print "\n", RESET;
