@@ -1,9 +1,23 @@
 #!/usr/bin/perl
+$| = 1;
 use strict;
 use warnings;
 use Term::ANSIColor qw(:constants);
 
-my @listing = qx(ls -F);
+my @listing;
+if (exists $ARGV[1]) {
+  print "Warning, recommended one folder at a time\nor use regular ls for readability\n";
+  sleep 2;
+}
+
+if (!exists $ARGV[0]) {
+  @listing = qx(ls -F);
+} else {
+  @listing = qx(ls -F @ARGV);
+}
+
+
+
 foreach(@listing) {
   chomp $_;
 }
@@ -115,3 +129,4 @@ foreach my $file_item (@leftovers) {
 $counter += 1;
 }
 print "\n", RESET;
+
