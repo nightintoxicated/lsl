@@ -50,6 +50,8 @@ foreach (@directories) {
 
 # Time to print stuff 
 my $counter = 0;
+my $dir = qx(pwd);
+print $dir;
 print GREEN "Directories and Symlinks\n", RESET;
 
 foreach my $dir_item (@directories) {
