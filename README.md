@@ -1,6 +1,8 @@
 # lsl
 
-lsl is a wrapper around ls to make the output a little bit more organised and easier to digest.
+lsl is a lightweight wrapper around ls to make the output a little bit more organised and easier to digest.
+it reformats ls so that it appears as as an organised lister rather than spitting everything back at you unorganised.
+
 It really shines in large folders with lots of files and sub directories.
 
 to install:
