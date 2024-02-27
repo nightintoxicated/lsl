@@ -28,4 +28,5 @@ with regular ls
 
 with lsl
 
+![a](https://github.com/nightintoxicated/lsl/blob/main/Screenshot%202024-02-27%20at%2011.06.21.png)
 ![Screenshot 2023-09-28 at 15 52 26](https://github.com/nightintoxicated/lsl/assets/50459012/b76ae4bf-9760-4f64-b330-7180cbfd7103)
