@@ -1,6 +1,7 @@
 # lsl
 
 lsl is a wrapper around ls to make the output a little bit more organised and easier to digest.
+It really shines in large folders with lots of files and sub directories.
 
 to install:
 
