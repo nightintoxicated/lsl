@@ -6,11 +6,12 @@ to install:
 
 Option 1:
 make sure you have make installed
+
 cd /tmp
 
-git clone
+git clone the repo
 
-cd into directory
+cd into the cloned directory
 
 type make install
 
