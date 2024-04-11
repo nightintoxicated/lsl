@@ -9,18 +9,14 @@ It really shines in large folders with lots of files and sub directories.
 to install:
 
 <b>Option 1:</b>
+
 make sure you have make installed
 
-cd /tmp
-
-git clone the repo
-
-cd into the cloned directory
-
-type make install
+git clone the repo , cd into the cloned directory, type <b>make install</b>
 
 
 <b>Option 2:</b>
+
 download the file, chmod +x lsl, then move it to /bin or another $PATH
 
 
