@@ -2,12 +2,13 @@
 
 lsl is a lightweight wrapper around ls to make the output a little bit more organised and easier to digest.
 it reformats ls so that it appears as as an organised lister rather than spitting everything back at you unorganised.
-
 It really shines in large folders with lots of files and sub directories.
+
+------------
 
 to install:
 
-Option 1:
+<b>Option 1:</b>
 make sure you have make installed
 
 cd /tmp
@@ -19,7 +20,7 @@ cd into the cloned directory
 type make install
 
 
-Option 2:
+<b>Option 2:</b>
 download the file, chmod +x lsl, then move it to /bin or another $PATH
 
 
