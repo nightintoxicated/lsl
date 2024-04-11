@@ -26,19 +26,17 @@ lsl is a lightweight ls wrapper to make the output more readable.
 
 
 ------------
-to install:
+to install (dnf based instructions):
 
 <b>Option 1:</b>
 
-make sure you have make installed
-
-dnf install perl perl-Term-ANSIColor -y
+dnf install perl perl-Term-ANSIColor make -y
 
 git clone the repo , cd into the cloned directory, type <b>make install</b>
 
 
 <b>Option 2:</b>
-dnf install perl perl-Term-ANSIColor -y
+dnf install perl perl-Term-ANSIColor make -y
 
 download the file, chmod +x lsl, then move it to /bin or another $PATH
 
