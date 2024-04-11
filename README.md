@@ -2,6 +2,9 @@
 <br>
 lsl is a lightweight ls wrapper to make the output more readable.
 <br>
+<br><br>
+<br><br>
+<br><br>
 <br>
 with regular ls
 <br>
