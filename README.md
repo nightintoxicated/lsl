@@ -18,7 +18,7 @@ lsl is a lightweight ls wrapper to make the output more readable.
 ![a](https://github.com/nightintoxicated/lsl/blob/main/Screenshot%202024-02-27%20at%2011.06.21.png)
 <br>
 <br>
-<b> example of folders </b>
+<b> and another lsl example </b>
 <br>
 <br>
 
@@ -26,6 +26,9 @@ lsl is a lightweight ls wrapper to make the output more readable.
 
 
 ------------
+
+Dependencies: uses perl!
+
 
 to install:
 
