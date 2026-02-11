@@ -1,0 +1,38 @@
+spacer is a simple script to ease with readability by seperating lines with clear markers.
+
+e.g. before
+
+./snort --help-config stream|tail -n 10
+int stream_tcp.queue_limit.max_segments = 3072: don't queue more than given segments per session and direction, 0 = unlimited { 0:max32 }
+int stream_tcp.queue_limit.asymmetric_ids_flush_threshold = 3145728: max bytes queued on asymmetric flow before flush in IDS mode { 1:max31 }
+int stream_tcp.small_segments.count = 0: number of consecutive (in the received order) TCP small segments considered to be excessive (129:12) { 0:2048 }
+int stream_tcp.small_segments.maximum_size = 0: minimum bytes for a TCP segment not to be considered small (129:12) { 0:2048 }
+int stream_tcp.session_timeout = 180: session tracking timeout { 1:max31 }
+bool stream_tcp.track_only = false: disable reassembly if true
+int stream_tcp.embryonic_timeout = 30: Non-established connection timeout { 1:max31 }
+int stream_tcp.idle_timeout = 3600: session deletion on idle  { 1:max31 }
+int stream_udp.session_timeout = 30: session tracking timeout { 1:max31 }
+int stream_user.session_timeout = 60: session tracking timeout { 1:max31 }
+
+./snort --help-config stream|tail -n 10 | /usr/local/src/spacer/src/spacer -d
+--- begin spacer ---
+int stream_tcp.queue_limit.max_segments = 3072: don't queue more than given segments per session and direction, 0 = unlimited { 0:max32 }
+-----
+int stream_tcp.queue_limit.asymmetric_ids_flush_threshold = 3145728: max bytes queued on asymmetric flow before flush in IDS mode { 1:max31 }
+-----
+int stream_tcp.small_segments.count = 0: number of consecutive (in the received order) TCP small segments considered to be excessive (129:12) { 0:2048 }
+-----
+int stream_tcp.small_segments.maximum_size = 0: minimum bytes for a TCP segment not to be considered small (129:12) { 0:2048 }
+-----
+int stream_tcp.session_timeout = 180: session tracking timeout { 1:max31 }
+-----
+bool stream_tcp.track_only = false: disable reassembly if true
+-----
+int stream_tcp.embryonic_timeout = 30: Non-established connection timeout { 1:max31 }
+-----
+int stream_tcp.idle_timeout = 3600: session deletion on idle  { 1:max31 }
+-----
+int stream_udp.session_timeout = 30: session tracking timeout { 1:max31 }
+-----
+int stream_user.session_timeout = 60: session tracking timeout { 1:max31 }
+-----
