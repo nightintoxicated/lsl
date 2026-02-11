@@ -1,0 +1,47 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+#misc tool to run through a pipe to improve readability slightly.
+
+die "too many arguments to $0" if $ARGV[1];
+die "invalid argument" if $ARGV[0]
+ne "-d" && $ARGV[0] ne "-u" &&
+$ARGV[0] ne "-h" && $ARGV[0] ne "--help";
+
+my $arg;
+my $dashflag;
+my $helpflag;
+my $underscoreflag;
+my $nlflag; #default;
+
+my $help = "[-d = dashes, -u = underscores, -h = help, no flag = blanklines]\n";
+
+
+if ($ARGV[0]) {
+  $dashflag = 1 if $ARGV[0] eq "-d";
+  $underscoreflag = 1 if $ARGV[0] eq "-u";
+  $helpflag = 1 if $ARGV[0] eq "-h" || $ARGV[0] eq "--help";
+} else { $nlflag = 1; }
+
+
+if ($helpflag) { print $help; exit 1; }
+
+
+
+print "--- begin spacer ---\n";
+while (my $line = <STDIN>) {
+  print "$line";
+  
+  if ($dashflag) { 
+    print "-----\n"; 
+  } elsif ($nlflag) {
+    print "\n";
+  } elsif ($underscoreflag) {
+    print "_____\n";
+  }
+
+}
+
+
+return 1;
