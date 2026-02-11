@@ -5,10 +5,11 @@ use warnings;
 #misc tool to run through a pipe to improve readability slightly.
 
 die "too many arguments to $0" if $ARGV[1];
+if ($ARGV[0]) {
 die "invalid argument" if $ARGV[0]
 ne "-d" && $ARGV[0] ne "-u" &&
 $ARGV[0] ne "-h" && $ARGV[0] ne "--help";
-
+}
 my $arg;
 my $dashflag;
 my $helpflag;
